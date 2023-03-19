@@ -53,9 +53,6 @@ class GridWorld:
         prob = 1/3
         return prob
     
-    # def random_policy(self):
-    #     return np.random.choice(self.action_space, size=(self.grid_rows, self.grid_cols))
-    
     def visualize_path(self):
         ########
         self.env.reset()
