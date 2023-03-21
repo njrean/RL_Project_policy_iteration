@@ -1,0 +1,1 @@
+ norm = plt.Normalize(vals.min()-1, vals.max()+1)

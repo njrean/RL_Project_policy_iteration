@@ -2,9 +2,10 @@ import gym
 import numpy as np
 import time
 
-desc=["SFFG", "FFFF", "FFFF", "HFFF"]
+desc=["FSFF", "HFFF", "FHFF", "HFFG"]
 env = gym.make("FrozenLake-v1",desc=desc, render_mode="human", is_slippery=True)
-env.reset()
+reat = env.reset()
+print(reat)
 env.render()
 
 print('Initial state of the system')
