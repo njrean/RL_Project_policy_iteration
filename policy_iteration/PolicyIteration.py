@@ -78,7 +78,7 @@ class PolicyIteration:
             self.history_policy.append(policy)
             self.history_values.append(values)
             
-    def result_visuallize(self):
+    def result_visualize(self):
         # fig, ax = plt.subplots()
         fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
 
@@ -92,7 +92,8 @@ class PolicyIteration:
                 s = self.world.pos_to_state(c, r)
 
                 action = self.world.action_dict[self.policy[s]]
-                text = "{} \n {:.2f}".format(action, self.values[s])
+                # text = "{} \n {:.1f} [S{}]".format(action, self.values[s], s)
+                text = "{} \n S{}".format(action, s)
                 row.append(text)
                 
                 color = self.world.env_color[self.world.map[r][c]]
@@ -110,6 +111,12 @@ class PolicyIteration:
         cellDict = myTable.get_celld()
         for cell in cellDict:
             cellDict[cell].set_height(0.1)
+
+            # ax2.set_axis_off()
+        ax2.title.set_text('Policy Evaluation')
+        ax2.set_xlabel('Iteration')
+        ax2.set_ylabel('Sweeps')
+        ax2.set_box_aspect(True)
 
         ax2.set_xticks(range(len(self.evaluation_iteration)), range(len(self.evaluation_iteration)))
         ax2.plot(range(len(self.evaluation_iteration)), self.evaluation_iteration, 'ro-')

@@ -92,7 +92,7 @@ class GridWorld:
             
                 if len(next_s[s][a]) >1 :
                     str_s = next_s[s][a][0]
-                    str_prob = 0.99
+                    str_prob = 1
                     prob = (1.0-str_prob)/(len(next_s[s][a])-1)
 
                     transition_prob[s][a][str_s] = str_prob
