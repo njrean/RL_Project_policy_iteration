@@ -121,4 +121,3 @@ class GridWorld:
             time.sleep(0.5)
             if run_return[2] or count>30 or old_state==state:
                 break
-
